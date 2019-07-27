@@ -15,9 +15,10 @@ run by : ./my_shell
 4. get_input(){
  
 	4.1- If the input is not null then it is stored in history stack using add_history(input) function, for later
-    use(using upper arrow and lower arrow   keys). 
-    4.2- In this function the input string is coverted into a array of string (name : command) , which is made from input 
-    string using separator as space, and this command[][] is returned to main() function. 
+    	use(using upper arrow and lower arrow   keys). 
+	
+    	4.2- In this function the input string is coverted into a array of string (name : command) , which is made from input 
+    	string using separator as space, and this command[][] is returned to main() function. 
    } 
 
 5. Now in main() function command[0] location is compared with all commands we have to implement.
