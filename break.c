@@ -5,7 +5,7 @@
 
 FILE *write_in(int split_no) {
 	char split_file[300];
-    sprintf(split_file, "file_part%d.txt", split_no);
+    	sprintf(split_file, "file_part%d.txt", split_no);
 	return fopen(split_file, "w");
 }
 
@@ -14,7 +14,7 @@ int main(int argc , char *argv[]) {
 	FILE *write;
 	char line [128]; 
 	int split_no=1, nof_lines=1,total_lines ;
-	   sscanf(argv[1], "%d", &total_lines); 
+	sscanf(argv[1], "%d", &total_lines); 
    
 	read = fopen(argv[2],"r");
 	if (!read)
