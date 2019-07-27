@@ -1,4 +1,4 @@
-﻿all: my_shell break searchstring move cwd grep run_searchstring 
+﻿all: my_shell break searchstring move cwd run_searchstring 
 
 my_shell: my_shell.c
 	gcc my_shell.c -o my_shell -lreadline
@@ -21,4 +21,4 @@ run_searchstring:
 	gcc -o run_searchstring run_searchstring.c
 
 clean:
-	rm shell break searchstring move cwd f2 *~
+	rm my_shell break searchstring move cwd run_searchstring f2 *~
