@@ -74,15 +74,15 @@ int main() {
     int stat_loc;
 
     while (1) {
-        input = readline("cheetah@sushant>> ");
+        	input = readline("cheetah@sushant>> ");
 
-        command = get_input(input);
+        	command = get_input(input);
 
-        if (!command[0]) {      /* Handle empty commands */
-            free(input);
-            free(command);
-            continue;
-        }
+        	if (!command[0]) {      /* Handle empty commands */
+            		free(input);
+            		free(command);
+            		continue;
+       		}
 		if(strcmp(command[0], "exit") == 0){
 			printf("\tgoodbye!!\n") ;
 			exit(0) ;
@@ -97,16 +97,16 @@ int main() {
 			int x ;
 			pid_t ch ;
 			if((ch = fork()) < 0){
-    			printf("child is not created\n") ;
-    		}
-    		else if(ch > 0){
-    			waitpid(ch, &stat_loc, WUNTRACED);
-    		}
-    		else{
-    			if(x=execv("./break", command)<0)
-    				printf("execution error in break()\n");
+    				printf("child is not created\n") ;
+    			}
+    			else if(ch > 0){
+    				waitpid(ch, &stat_loc, WUNTRACED);
+    			}
+    			else{
+    				if(x=execv("./break", command)<0)
+    					printf("execution error in break()\n");
 			}
-		//exit(0) ;
+			//exit(0) ;
 		}
 
 		if(strcmp(command[0], "cwd") == 0){
@@ -130,49 +130,49 @@ int main() {
 			int x ;
 			pid_t ch ;
 			if((ch = fork()) < 0){
-    			printf("child is not created\n") ;
-    		}
-    		else if(ch > 0){
-    			waitpid(ch, &stat_loc, WUNTRACED);
-    		}
-    		else{
-    			if(x=execv("./move", command)<0)
-    				printf("execution error in break()\n");
-				}
-		//exit(0) ;
+    				printf("child is not created\n") ;
+    			}
+    			else if(ch > 0){
+    				waitpid(ch, &stat_loc, WUNTRACED);
+    			}
+    			else{
+    				if(x=execv("./move", command)<0)
+    					printf("execution error in break()\n");
+			}
+			//exit(0) ;
 		}
 	
 
 		if (strcmp(command[0], "help") == 0){
 			child_pid = fork();
-        	if (child_pid < 0) {
-            	perror("Fork failed");
-            exit(1);
-        }
+        		if (child_pid < 0) {
+            			perror("Fork failed");
+            			exit(1);
+       	 		}
 
-        	else if (child_pid == 0) {
-            /* Never returns if the call is successful */
+        		else if (child_pid == 0) {
+            		/* Never returns if the call is successful */
 				printf("\t\t ### help ####\n\n ") ;
-        		printf("1.cwd - Display Current Working Directory \n Syntax : cwd (No Arguments Required)") ;
-        		printf("\n\n") ;
-        		printf("2.move - for moving File/Directory from Source_dir to Destination_dir \n Syntax : move [source_path] [destination_path]\n") ;
-        		printf("\n3.SS - Search a given String in whole directory (Always take 4 arguments)\n ");
-        		printf("Syntax : SS [options] [search_string] [directory_path]\n") ;
-        		printf("options : n - position of line in the text file(line_no)\n");
-        		printf("\t c - no_of_lines in which the search_string in present\n") ;
-                printf("\t v - Display those lines in which the search_string is not present\n") ;
-        		printf("\t nc - for implementing both n and c options simultaneously\n\n ") ;
-        		printf("4.break - Split the given file \n Syntax : break [options] [file_name_path]\n");
-        		printf("options : int_value - in how many lines you want to break the file\n");
-        		printf("\n5.exit -for getting out of the shell\n\n") ;
+        			printf("1.cwd - Display Current Working Directory \n Syntax : cwd (No Arguments Required)") ;
+        			printf("\n\n") ;
+        			printf("2.move - for moving File/Directory from Source_dir to Destination_dir \n Syntax : move [source_path] [destination_path]\n") ;
+        			printf("\n3.SS - Search a given String in whole directory (Always take 4 arguments)\n ");
+        			printf("Syntax : SS [options] [search_string] [directory_path]\n") ;
+        			printf("options : n - position of line in the text file(line_no)\n");
+        			printf("\t c - no_of_lines in which the search_string in present\n") ;
+                		printf("\t v - Display those lines in which the search_string is not present\n") ;
+        			printf("\t nc - for implementing both n and c options simultaneously\n\n ") ;
+        			printf("4.break - Split the given file \n Syntax : break [options] [file_name_path]\n");
+        			printf("options : int_value - in how many lines you want to break the file\n");
+        			printf("\n5.exit -for getting out of the shell\n\n") ;
 
-                exit(1);
-            }
+                		exit(1);
+            		}
 
 
-    	 	else {
-            	waitpid(child_pid, &stat_loc, WUNTRACED);
-        	}
+    	 		else {
+            			waitpid(child_pid, &stat_loc, WUNTRACED);
+        		}
 		}
 		
 	}
