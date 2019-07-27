@@ -1,4 +1,4 @@
-﻿all: my_shell break searchstring move cwd grep game run_searchstring 
+﻿all: my_shell break searchstring move cwd grep run_searchstring 
 
 my_shell: my_shell.c
 	gcc my_shell.c -o my_shell -lreadline
@@ -16,11 +16,6 @@ move: move.c
 cwd: cwd.c
 	gcc cwd.c -o cwd
 
-grep: grep.sh
-	chmod 777 grep.sh
-
-game:
-	gcc -o game game.c
 
 run_searchstring:
 	gcc -o run_searchstring run_searchstring.c
