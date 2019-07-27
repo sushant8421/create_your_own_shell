@@ -1,0 +1,31 @@
+Write a C program to simulate a bash shell of your own say “my_shell” which consists of Linux commands:
+1. pwd
+2. mv
+3. grep
+4. split
+
+* The commands are to be implemented explicitly using C and should be executed via my_shell process using
+exec system call. Use of already existing implementation of these commands in bash or any other shell is
+strictly prohibited.
+
+Please note that:
+
+1. my_shell must look exactly like your terminal. The main program should read command line arguments
+from standard input and it should parse them into A) Command_Name (as mentioned above). B)
+Argument (if any).
+
+2. my_shell should also show correct usage of any command. Hence implement help command for
+your linux commands.
+
+3. my_shell should look exactly like the one in your Linux terminal: user@hostname:path to
+current dir.
+
+4. Any illegal command, unrecognized arguments should throw a meaningful error to the user and the
+shell should not crash or be killed.
+
+5. my_shell should also support the exit command so that the process is not killed or forcefully exited and
+print a meaningful exit message.
+
+6. my_shell should also remember the recently used commands. Hence implement history command for
+your shell. History function need not be explicitly implemented, but when using UP and DOWN
+arrows, the recently used commands must be available.
