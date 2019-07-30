@@ -17,7 +17,7 @@ cwd: cwd.c
 	gcc cwd.c -o cwd
 
 
-run_searchstring:
+run_searchstring: run_searchstring.c
 	gcc -o run_searchstring run_searchstring.c
 
 clean:
