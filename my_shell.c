@@ -120,7 +120,7 @@ int main() {
     		}
     		else{
     			if(x=execv("./cwd", command)<0)
-    				printf("execution error in break()\n");
+    				printf("execution error in cwd()\n");
 			}
 		//exit(0) ;
 		}
@@ -137,7 +137,7 @@ int main() {
     			}
     			else{
     				if(x=execv("./move", command)<0)
-    					printf("execution error in break()\n");
+    					printf("execution error in move()\n");
 			}
 			//exit(0) ;
 		}
